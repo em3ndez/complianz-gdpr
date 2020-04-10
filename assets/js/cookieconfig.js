@@ -1271,6 +1271,8 @@ jQuery(document).ready(function ($) {
 	}
 
 	function cmplzGetUrlParameter(sPageURL, sParam) {
+		if (typeof sPageURL === 'undefined') return false;
+
 		var queryString = sPageURL.split('?');
 		if (queryString.length == 1) return false;
 
