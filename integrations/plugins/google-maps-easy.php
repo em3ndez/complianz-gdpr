@@ -5,8 +5,7 @@ add_filter( 'cmplz_known_script_tags', 'cmplz_google_maps_easy_script' );
 function cmplz_google_maps_easy_script( $tags ) {
 	$tags[] = 'google-maps-easy';
 	$tags[] = 'maps.googleapis.com';
-	$tags[] = 'openstreetmap.org';
-	
+
 	return $tags;
 }
 
@@ -38,7 +37,7 @@ add_filter( 'cmplz_detected_services', 'cmplz_google_maps_easy_detected_services
  */
 
 function cmplz_google_maps_easy_placeholder( $tags ) {
-	$tags['google-maps'][] = 'gmp_map_opts';
+	$tags['google-maps'][] = 'gmpMapDetailsContainer';
 
 	return $tags;
 }
@@ -53,7 +52,7 @@ add_filter( 'cmplz_placeholder_markers', 'cmplz_google_maps_easy_placeholder' );
 add_filter( 'cmplz_dependencies', 'cmplz_google_maps_easy_dependencies' );
 function cmplz_google_maps_easy_dependencies( $tags ) {
 
-	$tags['google-maps-easy'] = 'maps.googleapis.com';
+	$tags['maps.googleapis.com'] = 'google-maps-easy';
 
 	return $tags;
 }

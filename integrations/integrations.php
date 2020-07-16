@@ -18,7 +18,7 @@ $cmplz_integrations_list = apply_filters( 'cmplz_integrations', array(
 	),
 
 	'google-maps-easy'       => array(
-		'constant_or_function' => 'getRandName',
+		'constant_or_function' => 'toeGetClassNameGmp',
 		'label'                => 'Google Maps Easy',
 	),
 
