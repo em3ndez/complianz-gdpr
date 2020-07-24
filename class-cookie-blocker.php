@@ -50,10 +50,8 @@ if ( ! class_exists( 'cmplz_cookie_blocker' ) ) {
 
 			$amp_tags = apply_filters( 'cmplz_amp_tags', $amp_tags );
 			foreach ( $amp_tags as $amp_tag ) {
-				$output = str_replace( '<' . $amp_tag,
+				$output = str_replace( '<' . $amp_tag . ' ',
 					'<' . $amp_tag . ' data-block-on-consent ', $output );
-
-
 			}
 			return $output;
 		}
