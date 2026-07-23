@@ -1,0 +1,16 @@
+{
+	"extends": "@wordpress/stylelint-config/scss-stylistic",
+	"rules": {
+		"selector-class-pattern": null
+	},
+	"ignoreFiles": [
+		"**/*.min.css",
+		"**/node_modules/**",
+		"**/vendor/**",
+		"**/build/**",
+		"assets/css/**/*.css",
+		"cookiebanner/css/**/*.css",
+		"upgrade/*.css",
+		"DNSMPD/*.css"
+	]
+}

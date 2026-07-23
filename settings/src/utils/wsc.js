@@ -10,19 +10,21 @@ export const startWscOnboarding = () => {
  * Map the scan_upsell object from cmplz_settings to Alert component props.
  * All display properties (strings, icon, CTA) are defined PHP-side.
  *
- * @returns {object|null}
+ * @return {object|null}
  */
 export const getScanUpsellAlertProps = () => {
 	const upsell = cmplz_settings.scan_upsell;
-	if ( ! upsell ) return null;
+	if ( ! upsell ) {
+		return null;
+	}
 	return {
-		title:      upsell.title,
-		subtitle:   upsell.subtitle,
-		body:       upsell.body,
-		icon:       upsell.icon,
-		iconColor:  upsell.icon_color,
-		ctaLabel:   upsell.cta_label,
-		ctaUrl:     upsell.cta_url,
+		title: upsell.title,
+		subtitle: upsell.subtitle,
+		body: upsell.body,
+		icon: upsell.icon,
+		iconColor: upsell.icon_color,
+		ctaLabel: upsell.cta_label,
+		ctaUrl: upsell.cta_url,
 		ctaFieldId: upsell.cta_field_id,
 	};
 };

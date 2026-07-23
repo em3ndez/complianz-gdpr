@@ -171,7 +171,6 @@ const DateRange = () => {
 				transformOrigin={{vertical: 'top', horizontal: 'right'}}
 				open={open}
 				onClose={handleClose}
-				className="burst"
 			>
 				<div id="cmplz-date-range-picker-container">
 					<DateRangePicker

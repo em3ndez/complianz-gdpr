@@ -14,33 +14,68 @@ import useFields from '../Settings/Fields/FieldsData';
  *   ctaUrl     {string}   - External URL → renders <a>; omit for button CTA
  *   ctaFieldId {string}   - utm_content value for getReferralUrl (optional)
  *   onCtaClick {Function} - Click handler → renders <button>; ignored when ctaUrl set
+ * @param root0
+ * @param root0.title
+ * @param root0.subtitle
+ * @param root0.body
+ * @param root0.icon
+ * @param root0.iconColor
+ * @param root0.ctaLabel
+ * @param root0.ctaUrl
+ * @param root0.ctaFieldId
+ * @param root0.onCtaClick
  */
-const Alert = ( { title, subtitle, body, icon = 'warning', iconColor = 'orange', ctaLabel, ctaUrl, ctaFieldId = '', onCtaClick } ) => {
+const Alert = ( {
+	title,
+	subtitle,
+	body,
+	icon = 'warning',
+	iconColor = 'orange',
+	ctaLabel,
+	ctaUrl,
+	ctaFieldId = '',
+	onCtaClick,
+} ) => {
 	const resolvedUrl = ctaUrl
 		? useFields.getState().getReferralUrl( 'warnings', ctaFieldId, ctaUrl )
 		: null;
 
 	return (
 		<div className="cmplz-wscscan-alert">
-			<Icon name={icon} color={iconColor} size={48}/>
+			<Icon name={ icon } color={ iconColor } size={ 48 } />
 			<div className="cmplz-wscscan-alert-group">
-				<div className="cmplz-wscscan-alert-group-title">{title}</div>
-				{subtitle && <div className="cmplz-wscscan-alert-group-desc">{subtitle}</div>}
+				<div className="cmplz-wscscan-alert-group-title">{ title }</div>
+				{ subtitle && (
+					<div className="cmplz-wscscan-alert-group-desc">
+						{ subtitle }
+					</div>
+				) }
 			</div>
-			{body && <div className="cmplz-wscscan-alert-desc-long">{body}</div>}
-			{( resolvedUrl || onCtaClick ) && ctaLabel && (
+			{ body && (
+				<div className="cmplz-wscscan-alert-desc-long">{ body }</div>
+			) }
+			{ ( resolvedUrl || onCtaClick ) && ctaLabel && (
 				<div>
-					{resolvedUrl ? (
-						<a href={resolvedUrl} target="_blank" rel="noopener noreferrer" className="button button-default">
-							{ctaLabel}
+					{ resolvedUrl ? (
+						<a
+							href={ resolvedUrl }
+							target="_blank"
+							rel="noopener noreferrer"
+							className="button button-default"
+						>
+							{ ctaLabel }
 						</a>
 					) : (
-						<button type="button" onClick={onCtaClick} className="button button-default">
-							{ctaLabel}
+						<button
+							type="button"
+							onClick={ onCtaClick }
+							className="button button-default"
+						>
+							{ ctaLabel }
 						</button>
-					)}
+					) }
 				</div>
-			)}
+			) }
 		</div>
 	);
 };
