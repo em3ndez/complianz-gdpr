@@ -110,7 +110,7 @@ We respect and understand that you may want to be sure that your personal inform
 	array(
 		'content'   => 'You can object to the tracking by these cookies by clicking the "Manage Consent" button.',
 		'condition' => array(
-			'uses_ad_cookies' => 'yes',m
+			'uses_ad_cookies' => 'yes',
 		),
 	),
 

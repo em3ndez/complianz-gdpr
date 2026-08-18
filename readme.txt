@@ -6,7 +6,7 @@ Requires at least: 5.9
 License: GPL2
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 7.5.3
+Stable tag: 7.5.3.1
 
 Publish your cookie banner or notice in minutes. Automatically scan cookies, and create policies to align with GDPR, CCPA, and Google Consent Mode. 
 
@@ -226,6 +226,10 @@ Complianz uses geo-based detection to show the correct consent banner for each v
 The free version works on a single site. Complianz Premium supports WordPress multisite networks and includes features for managing consent across multiple domains. 
 
 == Changelog ==
+= 7.5.3.1 =
+* August 18th, 2026
+* Fix: Fatal error ("Undefined constant") when generating the US Cookie Policy, caused by a stray character introduced in 7.5.3.
+
 = 7.5.3 =
 * August 17th, 2026
 * Feature: Optional opt-in consent for the US region. Sites targeting California can switch the entire US region to opt-in from the wizard, blocking statistics and marketing scripts until consent is given. US legal documents update automatically to match.
